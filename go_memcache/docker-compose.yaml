@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  go_memcache:
+    image: memcached:1.6.22-alpine3.19
+    container_name: go_memcache
+    ports:
+      - 11211:11211
+    restart: unless-stopped
+    networks:
+      custom-bridge:
+    environment:
+      - TZ=Asia/Shanghai
+    logging:
+      options:
+        max-size: "10m"
+networks:
+  custom-bridge:
+    external: true
+volumes:
+  data:

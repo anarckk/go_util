@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  go_redis:
+    image: cache.registry.bee.anarckk.me:80/redis:7.0.8-alpine
+    container_name: go_redis
+    ports:
+      - 20372:6379
+    restart: unless-stopped
+    networks:
+      custom-bridge:
+    volumes:
+     - data:/data
+    environment:
+      - TZ=Asia/Shanghai
+    logging:
+      options:
+        max-size: "10m"
+  go_redis_ui:
+    image: patrikx3/p3x-redis-ui:2023.10.252
+    container_name: go_redis_ui
+    ports:
+      - 20373:7843
+    restart: unless-stopped
+    networks:
+      custom-bridge:
+    volumes:
+      - settings:/settings
+    environment:
+      - TZ=Asia/Shanghai
+    logging:
+      options:
+        max-size: "10m"
+networks:
+  custom-bridge:
+    external: true
+volumes:
+  data:
+  settings:

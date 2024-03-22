@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "eamodio.gitlens",
+        "formulahendry.code-runner",
+        "golang.go",
+        "msyrus.go-doc",
+        "ecmel.vscode-html-css",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+        "obkoro1.korofileheader",
+        "humao.rest-client",
+        "gruntfuggly.todo-tree",
+        "redhat.vscode-yaml",
+        "alefragnani.bookmarks",
+        "redhat.vscode-xml",
+        "yzhang.markdown-all-in-one",
+        "lijunawk.vscodegocomment"
+    ]
+}
